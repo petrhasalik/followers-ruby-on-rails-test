@@ -1,0 +1,31 @@
+<h1><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-user"></span> New user</h1>
+
+<%= link_to users_path do %>
+  <span class="glyphicon glyphicon-arrow-left"> Back</span>
+<% end %>
+
+<div class="row">
+  <div class="col-xs-6">
+
+    <% if @user.errors.any? %>
+      <div class="alert alert-danger" role="alert">
+        <h2>Error prohibited this user from being saved:</h2>
+
+        <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= form_for @user, url: { action: 'create' } do |f| %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control', placeholder: "User's name" %>
+        <small>Name has to be unique</small>
+      </div>
+      <%= f.submit class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

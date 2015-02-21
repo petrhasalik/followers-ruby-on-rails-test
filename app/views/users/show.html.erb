@@ -1,0 +1,17 @@
+<h1>
+  <span class="glyphicon glyphicon-user"></span>
+  <%= @user.name %>
+</h1>
+
+<%= link_to users_path do %>
+  <span class="glyphicon glyphicon-arrow-left"> Back</span>
+<% end %>
+
+<%=
+    render partial: 'columns', locals: {
+      user: @user,
+      followers: @followers,
+      followings: @followings,
+      nonfollowings: @nonfollowings
+    }
+%>

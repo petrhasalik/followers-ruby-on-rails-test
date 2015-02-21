@@ -1,0 +1,5 @@
+<div class="row">
+  <%= render partial: 'followers', locals: { user: user, followers: followers } %>
+  <%= render partial: 'following', locals: { user: user, followings: followings } %>
+  <%= render partial: 'notfollowing', locals: { user: user, nonfollowings: nonfollowings } %>
+</div>

@@ -1,0 +1,30 @@
+<div class="col-md-4">
+  <h2>Following <span class="follow-count pull-right"><%= followings.count %></span></h2>
+
+  <table class="table table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% followings.each do |f| %>
+        <tr>
+        <td><%= link_to f.name, user_path(f) %></td>
+        <td class="center">
+          <% if f.follows?(user) %>
+            <span class="glyphicon glyphicon-retweet" title="Follows you!"></span>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to unfollow_user_path(id: user.id, unfollow: f.id), method: :delete, class: 'remove', title: 'Unfollow!' do %>
+            <span class="glyphicon glyphicon-minus"></span><span class="glyphicon glyphicon-user"></span>
+          <% end %>
+        </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

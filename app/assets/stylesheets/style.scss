@@ -1,0 +1,36 @@
+span.follow-count {
+  color: #aaa;
+}
+
+td.center {
+  text-align: center;
+}
+
+a.remove {
+  color: #d50000;
+}
+
+.alert {
+  h2 {
+    margin-top: 0;
+    font-size: 1em;
+    font-weight: 900;
+  }
+}
+
+.main-container {
+  margin-top: 60px;
+}
+
+.navbar {
+
+  .navbar-nav > li > a {
+    color: #fff;
+  }
+
+  .btn {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 5px;
+  }
+}
